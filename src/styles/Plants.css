@@ -1,0 +1,50 @@
+.modal {
+    width: 90%;
+    left: 5%;
+}
+.modal-title {
+    margin-left: auto;
+}
+.modal-body {
+    width: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  background-color: #2196F3;
+  padding: 4px;
+  width: 100%;
+  font-size: 1em;
+
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 0.2em;
+  
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.grid-item > div {
+    min-height: 1em;
+    border-radius: 25%;
+}
+.blue {
+    background-color: #2196F3;
+}
+.orange {
+    background-color: #d4992c;
+}
+.green {
+    background-color: #7de9a1;
+}
+
+
+.card {
+    text-align: center;
+}
+div > div > h5 > a {
+  padding: 0 40%;
+}

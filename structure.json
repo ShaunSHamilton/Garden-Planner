@@ -1,0 +1,32 @@
+[
+    {
+        "plants": [
+            {
+                "title": "String",
+                "category": "String",
+                "img": "String",
+                "desc": "String",
+                "sowDesc": "String",
+                "sowMonths": [
+                    3,
+                    4
+                ],
+                "harvestMonths": [
+                    8,
+                    9
+                ],
+                "floweringMonths": [
+                    6,
+                    7
+                ]
+            }
+        ],
+        "categories": [
+            {
+                "title": "String",
+                "img": "String",
+                "numProducts": 1
+            }
+        ]
+    }
+]
