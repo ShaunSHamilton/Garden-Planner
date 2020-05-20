@@ -35,7 +35,7 @@ const Plants = (props) => {
             </div>
             <div id="accordion" role="tablist">
                 {props.sow && <Sow sow={props.plants} showModal={showModal} />}
-                {props.harvest && <Harvest />}
+                {props.harvest && <Harvest harvest={props.plants} showModal={showModal} />}
             </div>
         </div >
     )
@@ -43,7 +43,7 @@ const Plants = (props) => {
 
 const Grid = (props) => {
     const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    console.log(props.sow, props.harv, props.flow)
+    // console.log(props.sow, props.harv, props.flow)
     return (
         <div className="grid-container">
             {MONTHS.map((month, i) => <div key={i} className="grid-item" ><div>{month}</div><div className={props.sow.includes(i) ? "blue" : ""}>{props.sow.includes(i) ? 's' : ''}</div><div className={props.harv.includes(i) ? "orange" : ""}>{props.harv.includes(i) ? 'h' : ''}</div><div className={props.flow.includes(i) ? "green" : ""}>{props.flow.includes(i) ? "f" : ''}</div></div>)}
@@ -74,20 +74,21 @@ const Sow = (props) => {
 }
 
 const Harvest = (props) => {
+    const [isToggled, setIsToggled] = useState(false);
     return (
         <>
             <div className="card">
                 <div className="card-header" role="tab" id="headingTwo">
                     <h5 className="mb-0">
-                        <a className="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <a className="collapsed" data-toggle="collapse" href="#collapseTwo" onClick={() => setIsToggled(!isToggled)} aria-expanded="false" aria-controls="collapseTwo">
                             Harvest
                     </a>
                     </h5>
                 </div>
             </div>
-            <div id="collapseTwo" className="collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div id="collapseTwo" className={"collapse" + (isToggled ? " show" : "")} role="tabpanel" aria-labelledby="headingTwo">
                 <div className="card-body">
-                    {props.harvest.map((harv, i) => <Plant showModal={props.showModal} plants={harv.plants} key={i} />)}
+                    <Plant plants={props.harvest} showModal={props.showModal} />
                 </div>
             </div>
         </>
@@ -95,7 +96,6 @@ const Harvest = (props) => {
 }
 
 const Plant = (props) => {
-    console.log(props.plants)
     return (
         <div id="container">
             <div className="card-deck flex-sm-column justify-content-center flex-lg-row flex-wrap">

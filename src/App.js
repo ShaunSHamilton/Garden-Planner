@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,25 +10,44 @@ import Calendar from './components/Calendar';
 import Categories from './components/Categories';
 import Plants from './components/Plants';
 
-const EXAMPLE = [
-  { title: "Stupid Potatos", img: "https://search.thompson-morgan.com/thumb.php?f=https%3a%2f%2fwww.thompson-morgan.com%2fproduct_images%2f100%2f8975340994590.jpg&s=254", desc: "Later maturing, Sweetcorn Conquerer is well adapted to our indifferent summer weather. Strong growing plants 210cm (7ft) tall, with very few tillers (sideshoots), averaging three, 20cm (8in) long cobs per plant, each with 14-18 rows of kernels full to the tip. Sweetcorn Conquerer has superb eating quality!", sowDesc: "Sow seeds in mid spring 4 weeks before last expected frost in your area, singly 1cm (0.5in) deep in 7.5cm (3in) pots of compost. Germination usually takes 6-10 days at 21-24C (70-75F). Plant out 45cm (18in) apart when all danger of frost has passed, in blocks of short rows rather than one long row to ensure adequate cross pollination. A warm, sunny sheltered position in fertile, moist yet free draining soil is best.", sowMonths: [3, 4], harvestMonths: [8, 9], floweringMonths: [6, 7] },
-  { title: "Ugly Vegetables", img: "" }
-]
-
 function App() {
+  const [data, setData] = useState([]);
+  const [month, setMonth] = useState();
+  const [plants, setPlants] = useState([]);
+  useEffect(() => {
+    async function fetchData() {
+      let res = await fetch('https://raw.githubusercontent.com/Sky020/Garden-Planner/master/plantData.json');
+      const info = await res.json();
+      setData(info)
+    }
+    fetchData()
+    setPlants(data)
+  }, []);
+  function getMonth(mon) {
+    setMonth(mon);
+  }
+  function getData(cat) {
+    let myPlants = [];
+    for (let plant of data) {
+      if (plant.category == cat) {
+        myPlants.push(plant);
+      }
+    }
+    setPlants(myPlants)
+  }
   return (
     <Router>
       <div>
         <Link to="/"><h1 id="heading">My Garden Planner</h1></Link>
         <Switch>
           <Route path="/categories">
-            <Categories />
+            <Categories month={month} action={getData} data={data} />
           </Route>
           <Route path="/plants">
-            <Plants sow={true} harvest={false} plants={EXAMPLE} />
+            <Plants sow={true} harvest={false} plants={plants} />
           </Route>
           <Route path="/">
-            <Calendar />
+            <Calendar action={getMonth} />
           </Route>
         </Switch>
       </div>

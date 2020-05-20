@@ -45,6 +45,13 @@
 .card {
     text-align: center;
 }
+.card-title {
+    font-size: 1em;
+}
 div > div > h5 > a {
   padding: 0 40%;
+}
+
+img {
+    width: 100%;
 }
