@@ -3,8 +3,13 @@ import { Link } from 'react-router-dom';
 import '../styles/App.css';
 import '../styles/Categories.css';
 
+import { connect } from 'react-redux';
+import { fetchPlants } from '../actions/plantActions';
+import PropTypes from 'prop-types';
+
 const URL = "https://www.thompson-morgan.com"
 
+Plants.propTypes = { fetchPlants: PropTypes.func.isRequired, plants: PropTypes.array.isRequired }
 
 const Categories = (props) => {
     const CATEGORIES = [
@@ -30,6 +35,9 @@ const Categories = (props) => {
             }
         }
     }, []);
+    useEffect(() => {
+        this.props.fetchPlants();
+    })
 
     return (
         <div id="container">
@@ -60,4 +68,8 @@ const Card = (props) => {
     )
 }
 
-export default Categories;
+const mapStateToProps = state => ({
+    plants: state.plants.plants
+})
+
+export default connect(mapStateToProps, { fetchPlants })(Plants);
