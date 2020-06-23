@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Garden-Planner/static/css/main.c1c97bdc.chunk.css",
+    "main.js": "/Garden-Planner/static/js/main.66bf2b67.chunk.js",
+    "main.js.map": "/Garden-Planner/static/js/main.66bf2b67.chunk.js.map",
+    "runtime-main.js": "/Garden-Planner/static/js/runtime-main.5d4f209d.js",
+    "runtime-main.js.map": "/Garden-Planner/static/js/runtime-main.5d4f209d.js.map",
+    "static/css/2.89f067aa.chunk.css": "/Garden-Planner/static/css/2.89f067aa.chunk.css",
+    "static/js/2.0d4f771e.chunk.js": "/Garden-Planner/static/js/2.0d4f771e.chunk.js",
+    "static/js/2.0d4f771e.chunk.js.map": "/Garden-Planner/static/js/2.0d4f771e.chunk.js.map",
+    "index.html": "/Garden-Planner/index.html",
+    "precache-manifest.62e80416bb84165561fccb52ceba11ec.js": "/Garden-Planner/precache-manifest.62e80416bb84165561fccb52ceba11ec.js",
+    "service-worker.js": "/Garden-Planner/service-worker.js",
+    "static/css/2.89f067aa.chunk.css.map": "/Garden-Planner/static/css/2.89f067aa.chunk.css.map",
+    "static/css/main.c1c97bdc.chunk.css.map": "/Garden-Planner/static/css/main.c1c97bdc.chunk.css.map",
+    "static/js/2.0d4f771e.chunk.js.LICENSE.txt": "/Garden-Planner/static/js/2.0d4f771e.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/Garden-Planner/static/media/english-111-vivace.b50d45c2.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5d4f209d.js",
+    "static/css/2.89f067aa.chunk.css",
+    "static/js/2.0d4f771e.chunk.js",
+    "static/css/main.c1c97bdc.chunk.css",
+    "static/js/main.66bf2b67.chunk.js"
+  ]
+}
