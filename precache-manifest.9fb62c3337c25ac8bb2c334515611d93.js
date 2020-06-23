@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7372e793df27fa5dcec646ff48b1d916",
+    "revision": "1959fc42a44ba6675b9e44ebbafdd0b9",
     "url": "/Garden-Planner/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Garden-Planner/static/css/2.89f067aa.chunk.css"
   },
   {
-    "revision": "58fc4dfa908a44a9669d",
+    "revision": "c9ef01c78876db1a95f7",
     "url": "/Garden-Planner/static/css/main.c1c97bdc.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Garden-Planner/static/js/2.0d4f771e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "58fc4dfa908a44a9669d",
-    "url": "/Garden-Planner/static/js/main.66bf2b67.chunk.js"
+    "revision": "c9ef01c78876db1a95f7",
+    "url": "/Garden-Planner/static/js/main.62c9699e.chunk.js"
   },
   {
     "revision": "b04a185c9a63f442150c",
