@@ -26,7 +26,7 @@ const Categories = (props) => {
         return (
             <div id="container">
                 <div className="card-deck justify-content-center flex-lg-row flex-wrap">
-                    {props.categories.map((category, i) => <Card key={i} plants={props.plants} action={props.getPlantsFromCat} title={category.title} numPlants={category.numProducts} img={category.img} />)}
+                    {props.categories.map((category, i) => <Card key={i} plants={props.plants} action={props.getPlantsFromCat} title={category.title} month={props.month} numPlants={category.numProducts} img={category.img} />)}
                 </div>
             </div>
         )
@@ -43,7 +43,7 @@ const Card = (props) => {
     }
     return (
         <div id="cats-container" className={"card shadow m-2 m-lg-1" + (isHovered ? " hovered-img" : "")} onMouseEnter={handleHover} onMouseLeave={handleUnhover}>
-            <Link to="/plants" onClick={() => props.action(props.plants, props.title)}>
+            <Link to="/plants" onClick={() => props.action(props.plants, props.title, props.month)}>
                 <div className="card-body d-flex flex-column justify-content-center align-items-center">
                     <h4 className="card-title">{props.title} ({props.numPlants})</h4>
                     <img alt="Some category" src={props.img} />

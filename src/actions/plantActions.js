@@ -24,10 +24,10 @@ export const filterPlants = (state) => async dispatch => {
     await dispatch({ type: FILTER, data: [tempCats, false] })
 }
 
-export const getPlantsFromCat = (plants, title) => async dispatch => {
+export const getPlantsFromCat = (plants, title, month) => async dispatch => {
     let tempPlants = [];
     for await (let plant of plants) {
-        if (plant.category === title) {
+        if (plant.category === title && (plant.sowMonths.includes(month) || plant.harvestMonths.includes(month))) {
             tempPlants.push(plant)
         }
     }
