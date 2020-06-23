@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,7 +6,6 @@ import {
   Link
 } from "react-router-dom";
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
 import store from './store';
 
 import './styles/App.css';
@@ -14,25 +13,25 @@ import Calendar from './components/Calendar';
 import Categories from './components/Categories';
 import Plants from './components/Plants';
 
-const store = createStore(() => [], {}, applyMiddleware());
+// const store = createStore(() => [], {}, applyMiddleware());
 
 function App() {
-  const [data, setData] = useState([]);
-  const [month, setMonth] = useState();
-  const [plants, setPlants] = useState([]);
+  // const [data, setData] = useState([]);
+  // const [month, setMonth] = useState();
+  // const [plants, setPlants] = useState([]);
 
-  function getMonth(mon) {
-    setMonth(mon);
-  }
-  function getData(cat) {
-    let myPlants = [];
-    for (let plant of data) {
-      if (plant.category == cat) {
-        myPlants.push(plant);
-      }
-    }
-    setPlants(myPlants)
-  }
+  // function getMonth(mon) {
+  //   setMonth(mon);
+  // }
+  // function getData(cat) {
+  //   let myPlants = [];
+  //   for (let plant of data) {
+  //     if (plant.category === cat) {
+  //       myPlants.push(plant);
+  //     }
+  //   }
+  //   setPlants(myPlants)
+  // }
   return (
     <Provider store={store}>
       <Router>
@@ -40,13 +39,13 @@ function App() {
           <Link to="/"><h1 id="heading">My Garden Planner</h1></Link>
           <Switch>
             <Route path="/categories">
-              <Categories month={month} action={getData} data={data} />
+              <Categories />
             </Route>
             <Route path="/plants">
-              <Plants sow={true} harvest={false} plants={plants} />
+              <Plants />
             </Route>
             <Route path="/">
-              <Calendar action={getMonth} />
+              <Calendar />
             </Route>
           </Switch>
         </div>
